@@ -97,7 +97,7 @@ ITEM_PIPELINES = {
 #LOG_LEVEL = 'ERROR'
 #mysql
 MYSQL_HOST = '127.0.0.1'
-MYSQL_USER = 'dev'
+MYSQL_USER = 'pricejot_test'
 MYSQL_PASSWORD = '123456'
 MYSQL_PORT = 3306
 MYSQL_DB = 'pricejot_test'

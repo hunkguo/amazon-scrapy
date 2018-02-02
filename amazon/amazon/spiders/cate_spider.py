@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import scrapy
 from amazon.items import CateItem
 from amazon.mysqlpipelines.sql import Sql
@@ -21,19 +22,18 @@ class CateSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse, meta={'level': self.level})
 
     def parse(self, response):
-
         if response.meta['level'] == 1:
             list = response.css('#zg_browseRoot ul')[0].css('li a')
         elif response.meta['level'] == 2:
             list = response.css('#zg_browseRoot ul')[0].css('ul')[0].css('li a')
         else:
-            return 0
+            yield
         item = CateItem()
         leve_cur = response.meta['level']
         response.meta['level'] = response.meta['level'] + 1
-
         for one in list:
             item['title'] = one.css('::text')[0].extract()
+            print(item['title'])
             link = one.css('::attr(href)')[0].extract()
             item['link'] = link.split('ref=')[0]
             item['level'] = leve_cur

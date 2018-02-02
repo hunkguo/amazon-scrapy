@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import scrapy
 from amazon.items import DetailItem
 from amazon.mysqlpipelines.pipelines import Sql

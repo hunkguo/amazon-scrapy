@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import scrapy
 
 from amazon.helper import Helper

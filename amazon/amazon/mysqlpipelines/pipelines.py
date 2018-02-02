@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from scrapy.exceptions import DropItem
 
 from amazon.helper import Helper
